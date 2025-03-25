@@ -1,0 +1,14 @@
+name: run sendMail
+on:
+  push:
+  schedule:
+  - cron: '0 0 * * *'
+jobs:
+  build:
+    name: run python build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: run python
+      run: |
+        python3 sendMail.py
